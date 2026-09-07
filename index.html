@@ -1,138 +1,76 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Build Your Backdrop</title>
+  <meta name="theme-color" content="#09152b" />
+  <meta name="description" content="Build a birthday, ROM, wedding or corporate backdrop with YL Events." />
+  <title>Backdrop Studio | YL Events</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <header class="topbar">
-    <div>
-      <div class="eyebrow">MIX · MATCH · CELEBRATE</div>
-      <h1>Build Your Backdrop</h1>
-    </div>
-    <div class="price-pill">RM <span id="topTotal">499</span></div>
+    <a class="brand" href="#top" aria-label="YL Events Backdrop Studio home">
+      <span class="brand-mark">YL</span>
+      <span><strong>Backdrop Studio</strong><small>by YL Events</small></span>
+    </a>
+    <div class="topbar-meta"><span>Transparent estimate</span><a href="https://wa.me/60123476878" target="_blank" rel="noreferrer">WhatsApp YL Events ↗</a></div>
   </header>
 
-  <main class="app-shell">
-    <section class="preview-card">
-      <div class="preview-head">
-        <div>
-          <div class="eyebrow">LIVE PREVIEW</div>
-          <h2>Your setup</h2>
-        </div>
-        <button id="resetBtn" class="ghost-btn">Reset</button>
+  <main class="page" id="top">
+    <section class="intro">
+      <div>
+        <p class="eyebrow">MIX · MATCH · CELEBRATE</p>
+        <h1>Build a backdrop that fits your event.</h1>
+        <p class="intro-copy">Start with a package, then add the details that make it yours. Your estimate updates as you build.</p>
       </div>
-
-      <div id="stage" class="stage theme-sage">
-        <div class="floor-shadow"></div>
-        <div id="backdropLayer" class="backdrop rectangle">
-          <div class="backdrop-pattern"></div>
-          <div class="backdrop-copy">
-            <div id="previewMessage" class="preview-message">Happy Birthday</div>
-            <div id="previewName" class="preview-name">AIDAN</div>
-            <div id="previewAge" class="preview-age">7</div>
-          </div>
-        </div>
-        <div id="secondaryPanel" class="secondary-panel hidden"></div>
-        <div id="balloonLayer" class="balloons size-none hidden"></div>
-        <div id="flowerLayer" class="flowers size-none hidden"></div>
-        <div id="pedestalLayer" class="pedestal hidden"><div class="cake"></div></div>
-        <div id="marqueeLayer" class="marquee hidden">7</div>
-        <div id="lightLeft" class="light-stand hidden"><div class="bulb"></div></div>
-        <div id="lightRight" class="light-stand right hidden"><div class="bulb"></div></div>
-        <div id="spotLeft" class="spotlight hidden"></div>
-        <div id="spotRight" class="spotlight right hidden"></div>
-      </div>
-
-      <div class="theme-row" aria-label="Theme colours">
-        <button class="theme-dot active" data-theme="sage" aria-label="Sage"></button>
-        <button class="theme-dot" data-theme="blush" aria-label="Blush"></button>
-        <button class="theme-dot" data-theme="lavender" aria-label="Lavender"></button>
-        <button class="theme-dot" data-theme="navy" aria-label="Navy"></button>
-        <button class="theme-dot" data-theme="champagne" aria-label="Champagne"></button>
-      </div>
+      <div class="trust-row" aria-label="Service information"><span>✓ Klang Valley setup</span><span>✓ Final availability confirmed by our team</span></div>
     </section>
 
-    <section class="builder-card">
-      <div class="step-tabs" role="tablist">
-        <button class="step-tab active" data-step="1">1 Backdrop</button>
-        <button class="step-tab" data-step="2">2 Balloons</button>
-        <button class="step-tab" data-step="3">3 Flowers</button>
-        <button class="step-tab" data-step="4">4 Props</button>
-        <button class="step-tab" data-step="5">5 Lighting</button>
-        <button class="step-tab" data-step="6">6 Details</button>
-      </div>
-
-      <div class="step-panel active" data-panel="1">
-        <div class="section-title">
-          <span>Choose backdrop</span>
-          <small>Base setup</small>
+    <section class="builder" aria-label="Backdrop configurator">
+      <section class="panel preview-card" aria-labelledby="previewTitle">
+        <div class="preview-head">
+          <div><p class="eyebrow">LIVE PREVIEW</p><h2 id="previewTitle">Your setup</h2></div>
+          <button id="resetBtn" class="ghost-btn" type="button">Reset</button>
         </div>
-        <div class="option-grid" id="backdropOptions"></div>
-      </div>
-
-      <div class="step-panel" data-panel="2">
-        <div class="section-title"><span>Add balloons</span><small>Up to 3 standard colours</small></div>
-        <div class="option-grid" id="balloonOptions"></div>
-      </div>
-
-      <div class="step-panel" data-panel="3">
-        <div class="section-title"><span>Add flowers</span><small>Reusable floral modules</small></div>
-        <div class="option-grid" id="flowerOptions"></div>
-      </div>
-
-      <div class="step-panel" data-panel="4">
-        <div class="section-title"><span>Add props</span><small>Choose any combination</small></div>
-        <div class="check-grid" id="propOptions"></div>
-      </div>
-
-      <div class="step-panel" data-panel="5">
-        <div class="section-title"><span>Add lighting</span><small>Make the setup photograph better</small></div>
-        <div class="check-grid" id="lightingOptions"></div>
-      </div>
-
-      <div class="step-panel" data-panel="6">
-        <div class="section-title"><span>Personalise</span><small>We’ll verify availability after submission</small></div>
-        <div class="form-grid">
-          <label>Event type<select id="eventType"><option>Birthday</option><option>Baby Shower</option><option>ROM / Wedding</option><option>Corporate</option><option>Grand Opening</option><option>Other</option></select></label>
-          <label>Name<input id="nameInput" value="AIDAN" maxlength="18" /></label>
-          <label>Age / number<input id="ageInput" value="7" maxlength="3" /></label>
-          <label>Message<input id="messageInput" value="Happy Birthday" maxlength="28" /></label>
-          <label>Event date<input id="dateInput" type="date" /></label>
-          <label>Venue / area<input id="venueInput" placeholder="e.g. PJ, KL, Shah Alam" /></label>
+        <div id="stage" class="stage theme-navy" aria-label="Visual preview of your selected backdrop">
+          <div class="stage-label" id="stageLabel">Essential package</div>
+          <div class="floor-shadow"></div>
+          <div id="backdropLayer" class="backdrop rectangle"><div class="backdrop-pattern"></div><div class="backdrop-copy"><div id="previewMessage" class="preview-message">Happy Birthday</div><div id="previewName" class="preview-name">YOUR NAME</div><div id="previewAge" class="preview-age">7</div></div></div>
+          <div id="secondaryPanel" class="secondary-panel hidden"><span>celebrate</span></div>
+          <div id="balloonLayer" class="balloons size-none hidden" aria-hidden="true"></div>
+          <div id="flowerLayer" class="flowers size-none hidden" aria-hidden="true"></div>
+          <div id="pedestalLayer" class="pedestal hidden" aria-hidden="true"><div class="cake"></div></div>
+          <div id="marqueeLayer" class="marquee hidden" aria-hidden="true">7</div>
+          <div id="lightLeft" class="light-stand hidden" aria-hidden="true"><div class="bulb"></div></div><div id="lightRight" class="light-stand right hidden" aria-hidden="true"><div class="bulb"></div></div>
+          <div id="spotLeft" class="spotlight hidden" aria-hidden="true"></div><div id="spotRight" class="spotlight right hidden" aria-hidden="true"></div>
+          <div id="sizeMark" class="size-mark">4ft × 8ft</div>
         </div>
-      </div>
+        <div class="preview-foot"><div class="theme-title">Choose a colour direction</div><div class="theme-row" aria-label="Theme colours"><button class="theme-dot" data-theme="blush" aria-label="Blush and rose gold" type="button"></button><button class="theme-dot" data-theme="sage" aria-label="Sage and white" type="button"></button><button class="theme-dot active" data-theme="navy" aria-label="Navy and gold" type="button"></button><button class="theme-dot" data-theme="lavender" aria-label="Lavender and silver" type="button"></button><button class="theme-dot" data-theme="champagne" aria-label="Champagne and cream" type="button"></button></div></div>
+        <p class="preview-note">Visual preview is a guide. Final artwork, balloon colours and florals are confirmed with you before production.</p>
+      </section>
 
-      <div class="bottom-actions">
-        <button id="prevBtn" class="secondary-btn" disabled>Back</button>
-        <button id="nextBtn" class="primary-btn">Next</button>
-      </div>
+      <section class="panel builder-card" aria-labelledby="builderTitle">
+        <div class="builder-heading"><div><p class="eyebrow">CUSTOMISE YOUR SETUP</p><h2 id="builderTitle">Choose your pieces</h2></div><div class="step-count" id="stepCount">1 / 6</div></div>
+        <nav class="step-tabs" aria-label="Configurator steps">
+          <button class="step-tab active" type="button" data-step="1"><span>01</span>Package</button><button class="step-tab" type="button" data-step="2"><span>02</span>Balloons</button><button class="step-tab" type="button" data-step="3"><span>03</span>Flowers</button><button class="step-tab" type="button" data-step="4"><span>04</span>Props</button><button class="step-tab" type="button" data-step="5"><span>05</span>Lighting</button><button class="step-tab" type="button" data-step="6"><span>06</span>Details</button>
+        </nav>
+
+        <div class="step-panel active" data-panel="1"><div class="section-title"><div><h3>Start with a package</h3><p>Choose the foundation, then add only what you need.</p></div></div><div class="package-grid" id="packageOptions"></div><p class="catalog-note">Package prices are based on our current birthday backdrop catalogue and will be confirmed after your event details.</p></div>
+        <div class="step-panel" data-panel="2"><div class="section-title"><div><h3>Add balloons</h3><p>Choose the amount of balloon styling you want.</p></div></div><div class="option-grid" id="balloonOptions"></div></div>
+        <div class="step-panel" data-panel="3"><div class="section-title"><div><h3>Add flowers</h3><p>Reusable floral modules for the front or side of the setup.</p></div></div><div class="option-grid" id="flowerOptions"></div></div>
+        <div class="step-panel" data-panel="4"><div class="section-title"><div><h3>Add props</h3><p>Tap any item to add or remove it.</p></div></div><div class="option-grid" id="propOptions"></div></div>
+        <div class="step-panel" data-panel="5"><div class="section-title"><div><h3>Add lighting</h3><p>Improve the atmosphere and photographs.</p></div></div><div class="option-grid" id="lightingOptions"></div></div>
+        <div class="step-panel" data-panel="6"><div class="section-title"><div><h3>Tell us about the event</h3><p>These details help us check date, venue access and transport.</p></div></div><div class="form-grid"><label>Event type <span class="required">Required</span><select id="eventType"><option>Birthday</option><option>Baby Shower</option><option>ROM / Wedding</option><option>Corporate</option><option>Grand Opening</option><option>Other</option></select></label><label>Your name <span class="required">Required</span><input id="nameInput" value="" maxlength="32" placeholder="e.g. Jonathan Lee" autocomplete="name" /></label><label>Event date <span class="required">Required</span><input id="dateInput" type="date" autocomplete="off" /><small>Use the date selector on your device.</small></label><label>Venue / area <span class="required">Required</span><input id="venueInput" value="" maxlength="80" placeholder="e.g. Petaling Jaya, KL" autocomplete="street-address" /></label><label>Message on backdrop <span class="optional">Optional</span><input id="messageInput" value="Happy Birthday" maxlength="32" placeholder="e.g. Happy Birthday" /></label><label>Age / number <span class="optional">Optional</span><input id="ageInput" value="7" maxlength="3" inputmode="numeric" placeholder="e.g. 18" /></label></div><div class="form-error" id="formError" role="alert"></div></div>
+
+        <div class="bottom-actions"><button id="prevBtn" class="secondary-btn" type="button" disabled>Back</button><button id="nextBtn" class="primary-btn" type="button">Next: Balloons</button></div>
+      </section>
+
+      <aside class="panel summary-card" aria-labelledby="summaryTitle"><div class="summary-kicker"><p class="eyebrow">YOUR BACKDROP</p><span class="availability"><i></i> Estimate ready</span></div><h2 id="summaryTitle">Order summary</h2><p class="summary-sub">A clear starting estimate. We confirm availability and transport with you.</p><div id="summaryLines" class="summary-lines"></div><div class="summary-total"><span>Estimated starting price</span><strong>RM <span id="totalPrice">750</span></strong></div><p class="note">Installation and Klang Valley transport are reviewed with the venue details. No payment is required now.</p><button id="enquiryBtn" class="primary-btn full" type="button">Check availability on WhatsApp</button><button id="copyBtn" class="secondary-btn full" type="button">Copy enquiry summary</button><div id="copyNotice" class="copy-notice" role="status" aria-live="polite"></div></aside>
     </section>
-
-    <aside class="summary-card">
-      <div class="eyebrow">YOUR BACKDROP</div>
-      <h2>Order summary</h2>
-      <div id="summaryLines" class="summary-lines"></div>
-      <div class="summary-total"><span>Estimated total</span><strong>RM <span id="totalPrice">499</span></strong></div>
-      <p class="note">Transport, venue access, stairs, parking and midnight teardown are calculated separately.</p>
-      <button id="enquiryBtn" class="primary-btn full">Check availability</button>
-      <button id="copyBtn" class="secondary-btn full">Copy enquiry summary</button>
-      <div id="copyNotice" class="copy-notice" role="status"></div>
-    </aside>
   </main>
 
-  <div id="modal" class="modal hidden" aria-hidden="true">
-    <div class="modal-card">
-      <button id="closeModal" class="modal-close">×</button>
-      <div class="eyebrow">ENQUIRY READY</div>
-      <h2>Send this to your team</h2>
-      <textarea id="enquiryText" readonly></textarea>
-      <a id="whatsappBtn" class="primary-btn full" target="_blank" rel="noopener">Open WhatsApp</a>
-      <button id="modalCopyBtn" class="secondary-btn full">Copy text</button>
-    </div>
-  </div>
+  <div id="modal" class="modal hidden" aria-hidden="true"><div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><button id="closeModal" class="modal-close" type="button" aria-label="Close enquiry preview">×</button><p class="eyebrow">ENQUIRY READY</p><h2 id="modalTitle">Review before WhatsApp</h2><p class="modal-copy">Check the details below, then send them to YL Events for availability confirmation.</p><textarea id="enquiryText" readonly aria-label="Enquiry summary"></textarea><a id="whatsappBtn" class="primary-btn full" target="_blank" rel="noopener">Open WhatsApp to YL Events</a><button id="modalCopyBtn" class="secondary-btn full" type="button">Copy enquiry</button></div></div>
 
   <script src="app.js"></script>
 </body>
