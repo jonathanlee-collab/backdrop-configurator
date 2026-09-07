@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Build Your Backdrop</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <div class="eyebrow">MIX · MATCH · CELEBRATE</div>
+      <h1>Build Your Backdrop</h1>
+    </div>
+    <div class="price-pill">RM <span id="topTotal">499</span></div>
+  </header>
+
+  <main class="app-shell">
+    <section class="preview-card">
+      <div class="preview-head">
+        <div>
+          <div class="eyebrow">LIVE PREVIEW</div>
+          <h2>Your setup</h2>
+        </div>
+        <button id="resetBtn" class="ghost-btn">Reset</button>
+      </div>
+
+      <div id="stage" class="stage theme-sage">
+        <div class="floor-shadow"></div>
+        <div id="backdropLayer" class="backdrop rectangle">
+          <div class="backdrop-pattern"></div>
+          <div class="backdrop-copy">
+            <div id="previewMessage" class="preview-message">Happy Birthday</div>
+            <div id="previewName" class="preview-name">AIDAN</div>
+            <div id="previewAge" class="preview-age">7</div>
+          </div>
+        </div>
+        <div id="secondaryPanel" class="secondary-panel hidden"></div>
+        <div id="balloonLayer" class="balloons size-none hidden"></div>
+        <div id="flowerLayer" class="flowers size-none hidden"></div>
+        <div id="pedestalLayer" class="pedestal hidden"><div class="cake"></div></div>
+        <div id="marqueeLayer" class="marquee hidden">7</div>
+        <div id="lightLeft" class="light-stand hidden"><div class="bulb"></div></div>
+        <div id="lightRight" class="light-stand right hidden"><div class="bulb"></div></div>
+        <div id="spotLeft" class="spotlight hidden"></div>
+        <div id="spotRight" class="spotlight right hidden"></div>
+      </div>
+
+      <div class="theme-row" aria-label="Theme colours">
+        <button class="theme-dot active" data-theme="sage" aria-label="Sage"></button>
+        <button class="theme-dot" data-theme="blush" aria-label="Blush"></button>
+        <button class="theme-dot" data-theme="lavender" aria-label="Lavender"></button>
+        <button class="theme-dot" data-theme="navy" aria-label="Navy"></button>
+        <button class="theme-dot" data-theme="champagne" aria-label="Champagne"></button>
+      </div>
+    </section>
+
+    <section class="builder-card">
+      <div class="step-tabs" role="tablist">
+        <button class="step-tab active" data-step="1">1 Backdrop</button>
+        <button class="step-tab" data-step="2">2 Balloons</button>
+        <button class="step-tab" data-step="3">3 Flowers</button>
+        <button class="step-tab" data-step="4">4 Props</button>
+        <button class="step-tab" data-step="5">5 Lighting</button>
+        <button class="step-tab" data-step="6">6 Details</button>
+      </div>
+
+      <div class="step-panel active" data-panel="1">
+        <div class="section-title">
+          <span>Choose backdrop</span>
+          <small>Base setup</small>
+        </div>
+        <div class="option-grid" id="backdropOptions"></div>
+      </div>
+
+      <div class="step-panel" data-panel="2">
+        <div class="section-title"><span>Add balloons</span><small>Up to 3 standard colours</small></div>
+        <div class="option-grid" id="balloonOptions"></div>
+      </div>
+
+      <div class="step-panel" data-panel="3">
+        <div class="section-title"><span>Add flowers</span><small>Reusable floral modules</small></div>
+        <div class="option-grid" id="flowerOptions"></div>
+      </div>
+
+      <div class="step-panel" data-panel="4">
+        <div class="section-title"><span>Add props</span><small>Choose any combination</small></div>
+        <div class="check-grid" id="propOptions"></div>
+      </div>
+
+      <div class="step-panel" data-panel="5">
+        <div class="section-title"><span>Add lighting</span><small>Make the setup photograph better</small></div>
+        <div class="check-grid" id="lightingOptions"></div>
+      </div>
+
+      <div class="step-panel" data-panel="6">
+        <div class="section-title"><span>Personalise</span><small>We’ll verify availability after submission</small></div>
+        <div class="form-grid">
+          <label>Event type<select id="eventType"><option>Birthday</option><option>Baby Shower</option><option>ROM / Wedding</option><option>Corporate</option><option>Grand Opening</option><option>Other</option></select></label>
+          <label>Name<input id="nameInput" value="AIDAN" maxlength="18" /></label>
+          <label>Age / number<input id="ageInput" value="7" maxlength="3" /></label>
+          <label>Message<input id="messageInput" value="Happy Birthday" maxlength="28" /></label>
+          <label>Event date<input id="dateInput" type="date" /></label>
+          <label>Venue / area<input id="venueInput" placeholder="e.g. PJ, KL, Shah Alam" /></label>
+        </div>
+      </div>
+
+      <div class="bottom-actions">
+        <button id="prevBtn" class="secondary-btn" disabled>Back</button>
+        <button id="nextBtn" class="primary-btn">Next</button>
+      </div>
+    </section>
+
+    <aside class="summary-card">
+      <div class="eyebrow">YOUR BACKDROP</div>
+      <h2>Order summary</h2>
+      <div id="summaryLines" class="summary-lines"></div>
+      <div class="summary-total"><span>Estimated total</span><strong>RM <span id="totalPrice">499</span></strong></div>
+      <p class="note">Transport, venue access, stairs, parking and midnight teardown are calculated separately.</p>
+      <button id="enquiryBtn" class="primary-btn full">Check availability</button>
+      <button id="copyBtn" class="secondary-btn full">Copy enquiry summary</button>
+      <div id="copyNotice" class="copy-notice" role="status"></div>
+    </aside>
+  </main>
+
+  <div id="modal" class="modal hidden" aria-hidden="true">
+    <div class="modal-card">
+      <button id="closeModal" class="modal-close">×</button>
+      <div class="eyebrow">ENQUIRY READY</div>
+      <h2>Send this to your team</h2>
+      <textarea id="enquiryText" readonly></textarea>
+      <a id="whatsappBtn" class="primary-btn full" target="_blank" rel="noopener">Open WhatsApp</a>
+      <button id="modalCopyBtn" class="secondary-btn full">Copy text</button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
