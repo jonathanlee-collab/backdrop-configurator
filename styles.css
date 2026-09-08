@@ -35,6 +35,17 @@
 @media(max-width:780px){.package-card{min-height:auto}.next-steps{padding:19px}.next-step-grid{grid-template-columns:1fr 1fr;gap:16px}.next-step-grid div{padding-left:11px}}
 @media(max-width:420px){.next-step-grid{grid-template-columns:1fr}}
 @media(max-width:780px){.style-grid{grid-template-columns:1fr}}
+.backdrop.arch{border-radius:130px 130px 5px 5px}
+.backdrop.wave{border-radius:82px 12px 5px 5px;clip-path:polygon(0 18%,20% 7%,40% 14%,60% 0,80% 8%,100% 18%,100% 100%,0 100%)}
+.backdrop.round{left:29%;width:42%;height:auto;aspect-ratio:1;border-radius:50%;bottom:120px}
+.option-subtitle{margin:22px 0 10px;color:var(--navy);font-size:13px}
+.palette-picker{display:block;max-width:310px;margin:0 0 13px;color:#556278;font-size:12px;font-weight:800}
+.palette-picker select{display:block;width:100%;margin-top:6px;padding:11px;border:1px solid var(--line);border-radius:11px;background:#fff;color:var(--text)}
+.minimum-order-notice{margin:0 0 13px;padding:10px 12px;border-radius:10px;background:#eef5ee;color:#4f6f55;font-size:12px;font-weight:750;line-height:1.4}
+.minimum-order-notice.below-minimum{background:#fff4e7;color:#8a5a19}
+.upsell-nudge{display:flex;flex-direction:column;gap:3px;margin:0 0 10px;padding:11px 12px;border-left:3px solid var(--gold);background:#fbf7ec;color:#756c5b;font-size:12px;line-height:1.4}
+.upsell-nudge strong{color:var(--navy);font-size:12px}
+@media(max-width:780px){.backdrop.round{left:29%;width:42%;height:auto;bottom:105px}}
 .package-photo{position:relative;display:block;width:calc(100% + 30px);height:116px;margin:-15px -15px 4px;overflow:hidden;border-radius:15px 15px 9px 9px;background:linear-gradient(135deg,#dbe3e8,#f4e8d5)}
 .package-photo:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(9,21,43,.04),rgba(9,21,43,.35))}
 .package-photo img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .3s ease}
@@ -43,6 +54,7 @@
 .photo-credits{margin:8px 0 0;color:#8b919c;font-size:10px;line-height:1.4}
 .photo-credits a{color:#5d6e88;text-underline-offset:2px}
 @media(max-width:780px){.package-photo{height:150px}}
+.save-status{min-height:18px;margin-top:7px;color:#7a8492;text-align:center;font-size:11px;line-height:1.35}
 .mobile-quick-summary{display:none}
 @media(max-width:780px){
   body{padding-bottom:78px}

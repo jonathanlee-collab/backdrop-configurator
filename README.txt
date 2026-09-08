@@ -1,4 +1,4 @@
-BACKDROP CONFIGURATOR V1.5
+BACKDROP CONFIGURATOR V1.7
 
 Files:
 - index.html
@@ -18,9 +18,13 @@ Then visit:
   http://localhost:3000
 
 Important notes:
-- Prices and products are sample catalogue values.
+- The backdrop catalogue follows the modular BD01–BD10 SKU model; verify final stock, prices and transport before publishing commercially.
+- Base backdrop prices cover the backdrop module and standard setup/dismantling. Transport, venue charges, access and after-hours work are quoted separately.
+- Minimum order is RM699 before transport. The enquiry flow notes the 50% deposit and two included artwork revisions.
+- Balloon, flower palette, pedestal, prop and lighting modules are priced as separate add-ons.
 - WhatsApp opens with a prefilled enquiry summary to YL Events.
 - Package images are demo references, not YL Events portfolio photos.
 - Replace demo images with approved YL Events setup photos before final marketing use.
+- The current draft can be saved locally on the visitor's device; no data is sent until WhatsApp is opened.
 - No inventory availability, payment, admin dashboard, or database is included yet.
-- Replace sample product names/prices after the prop audit.
+- Replace sample product names/prices after the asset and inventory audit.
